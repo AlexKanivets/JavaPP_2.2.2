@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Cars</title>
 </head>
 <body>
-    <p th:text="${carList}"/>
+<h1>Автомобили</h1>
+<table border="1">
+    <tr>
+        <th>Модель</th>
+        <th>Цвет</th>
+        <th>Год</th>
+        <th>Цена (руб.)</th>
+    </tr>
+    <tr th:each="car : ${carList}">
+        <td th:text="${car.getModel()}"/>
+        <td th:text="${car.getColor()}"/>
+        <td th:text="${car.getYear()}"/>
+        <td th:text="${car.getPrice()}"/>
+    </tr>
+</table>
 </body>
 </html>

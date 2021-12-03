@@ -10,7 +10,6 @@ import web.service.CarServiceImp;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 @Controller
@@ -18,11 +17,11 @@ public class CarController {
     @GetMapping(value = "/cars")
     public String getCar(@RequestParam(value = "count", required = false) Integer count, Model model) {
         List<Car> carList = new ArrayList<>();
-        carList.add(new Car("model1", "color1", "year1"));
-        carList.add(new Car("model2", "color2", "year2"));
-        carList.add(new Car("model3", "color3", "year3"));
-        carList.add(new Car("model4", "color4", "year4"));
-        carList.add(new Car("model5", "color5", "year5"));
+        carList.add(new Car("BMW 5 серии 540i xDrive VII (G30/G31)", "Синий", 2020, 5500000));
+        carList.add(new Car("Ford Focus III", "Белый", 2014, 570000));
+        carList.add(new Car("Audi A6 IV (C7) Рестайлинг", "Черный", 2015, 1350000));
+        carList.add(new Car("Mercedes-Benz AMG GT 43 I Рестайлинг", "Белый", 2019, 7085000));
+        carList.add(new Car("Volkswagen Tiguan II Рестайлинг", "Бежевый", 2021, 1850000));
         CarService carService = new CarServiceImp();
         model.addAttribute("carList", carService.getCarList(carList,count));
         return "cars";

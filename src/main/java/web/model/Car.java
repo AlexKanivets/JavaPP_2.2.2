@@ -3,12 +3,14 @@ package web.model;
 public class Car {
     private String model;
     private String color;
-    private String year;
+    private Integer year;
+    private Integer price;
 
-    public Car (String model, String color, String year) {
+    public Car (String model, String color, Integer year, Integer price) {
         this.model = model;
         this.year = year;
         this.color = color;
+        this.price = price;
     }
 
     public String getModel() {
@@ -19,11 +21,11 @@ public class Car {
         this.model = model;
     }
 
-    public String getYear() {
+    public Integer getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(Integer year) {
         this.year = year;
     }
 
@@ -35,12 +37,11 @@ public class Car {
         this.color = color;
     }
 
-    @Override
-    public String toString() {
-        return "Car {" +
-                "model='" + model +
-                ", color='" + color +
-                ", year='" + year +
-                '}';
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 }
